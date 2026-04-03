@@ -6,8 +6,6 @@ I update it as I go. It's my source of truth, but feel free to steal whatever's 
 
 ---
 
----
-
 ## File Locations
 
 ### General (any user)
@@ -79,7 +77,25 @@ The bar turns orange at 50% and red at 80% so you can see at a glance when you'r
 
 ---
 
-## Applying Config
+## Keeping This Repo in Sync
+
+When you change anything in `~/.claude/` (CLAUDE.md, settings, skills), run:
+
+```bash
+./sync.sh
+```
+
+This pulls the live files into the repo. Then commit:
+
+```bash
+git add -A && git commit -m "sync config" && git push
+```
+
+`sync.sh` only touches files already tracked — it won't accidentally pull in anything new.
+
+---
+
+## Applying Config to a New Machine
 
 ```bash
 # Global instructions and settings
